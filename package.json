@@ -1,0 +1,32 @@
+{
+  "name": "tjn-create",
+  "version": "0.1.0",
+  "description": "React Application Scaffold for Tjene Custom Development",
+  "main": "cli.js",
+  "bin": {
+    "tjn-create": "./cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kedanielwu/tjn-create.git"
+  },
+  "keywords": [
+    "React"
+  ],
+  "author": "Ke Daniel Wu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kedanielwu/tjn-create/issues"
+  },
+  "homepage": "https://github.com/kedanielwu/tjn-create#readme",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "fs-extra": "^9.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  }
+}
