@@ -1,5 +1,6 @@
 const path = require("path");
 const autoprefixer = require('autoprefixer');
+const babelLoader = require('./webpack.babel');
 // webpack.config.js
 module.exports = {
   mode: "development",
@@ -37,21 +38,9 @@ module.exports = {
             loader: require.resolve('eslint-loader'),
           },
         ],
-        include: path.resolve(__dirname, "../.."),
+        include: path.resolve(__dirname, "../src"),
       },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: [
-          {
-            loader: "babel-loader",
-            options: {
-              cacheDirectory: true,
-              presets: ["@babel/preset-env", "@babel/preset-react"]
-            }
-          }
-        ]
-      },
+      babelLoader,
       {
         test: /\.css/,
         include: [path.join(__dirname, '../'), /(node_modules)/],
