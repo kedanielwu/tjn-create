@@ -6,7 +6,7 @@ module.exports = {
   resolve: {
     extensions: [".js", ".jsx"],
   },
-  entry: ['@babel/polyfill', './src/index.js'],
+  entry: ['./src/index.js'],
   output: {
     path: path.join(
       path.resolve(__dirname, '../'),
@@ -36,7 +36,16 @@ module.exports = {
         loader: "babel-loader",
         options: {
           cacheDirectory: true,
-          presets: ["@babel/preset-env", "@babel/preset-react"],
+          presets: [
+            [
+              "@babel/preset-env", 
+              {
+                useBuitIns: "entry",
+                corejs: 3
+              }
+            ],
+            "@babel/preset-react"
+          ],
           plugins: [
             "@babel/plugin-proposal-class-properties"
           ]

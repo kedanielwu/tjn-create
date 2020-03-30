@@ -33,6 +33,7 @@ baseConfig.devServer = {
     warnings: false,
     errors: true
   },
+  open: true,
   compress: true,
   contentBase: path.resolve(__dirname, '../src'),
   clientLogLevel: 'warning',
