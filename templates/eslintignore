@@ -9,3 +9,5 @@
 /coverage/
 *.config.js
 /src/registerServiceWorker.js
+/config
+/devServer

@@ -26,8 +26,8 @@ fs.copySync(TEMPLATE_PATH, APP_PATH);
 const packageJson = require(path.join(APP_PATH, 'pkg.json'));
 packageJson.name = APP_NAME;
 packageJson.scripts = {
-  'bundle': 'webpack --config ./config/webpack.prod.js',
-  'start': 'webpack-dev-server --config ./config/webpack.dev.js'
+  'bundle': `webpack --config ./config/webpack.prod.js --appName=${APP_NAME}`,
+  'start': `webpack-dev-server --config ./config/webpack.dev.js --appName=${APP_NAME}`
 };
 fs.writeFileSync(
   path.join(APP_PATH, 'pkg.json'),
@@ -36,6 +36,19 @@ fs.writeFileSync(
 fs.renameSync(
   path.join(APP_PATH, 'pkg.json'),
   path.join(APP_PATH, 'package.json')
+);
+// rename rc files
+fs.renameSync(
+  path.join(APP_PATH, 'gitignore'),
+  path.join(APP_PATH, '.gitignore')
+);
+fs.renameSync(
+  path.join(APP_PATH, 'eslintrc.js'),
+  path.join(APP_PATH, '.eslintrc.js')
+);
+fs.renameSync(
+  path.join(APP_PATH, 'eslintignore'),
+  path.join(APP_PATH, '.eslintignore')
 );
 // perform npm install
 console.log(chalk.cyan('📦 Installing Packages...'));
