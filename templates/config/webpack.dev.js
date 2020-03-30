@@ -39,7 +39,7 @@ baseConfig.devServer = {
   clientLogLevel: 'warning',
   historyApiFallback: true,
 }
-
+baseConfig.devtool = 'eval-cheap-source-map'
 baseConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
 baseConfig.plugins.push(new webpack.NamedModulesPlugin());
 baseConfig.plugins.push(new HtmlWebpackPlugin({

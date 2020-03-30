@@ -40,7 +40,7 @@ module.exports = {
             [
               "@babel/preset-env", 
               {
-                useBuitIns: "entry",
+                useBuiltIns: "usage",
                 corejs: 3
               }
             ],
