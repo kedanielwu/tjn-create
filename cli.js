@@ -26,7 +26,7 @@ fs.copySync(TEMPLATE_PATH, APP_PATH);
 const packageJson = require(path.join(APP_PATH, 'pkg.json'));
 packageJson.name = APP_NAME;
 packageJson.scripts = {
-  'bundle': `webpack --config ./config/webpack.prod.js --appName=${APP_NAME}`,
+  'bundle': `webpack -p --progress --config ./config/webpack.prod.js --appName=${APP_NAME}`,
   'start': `webpack-dev-server --config ./config/webpack.dev.js --appName=${APP_NAME}`
 };
 fs.writeFileSync(

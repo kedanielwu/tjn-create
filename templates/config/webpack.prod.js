@@ -71,7 +71,7 @@ module.exports = merge(baseConfig, {
       chunkFilename: 'css/[name]-[id].[contenthash:8].css',
     }),
     new CopyWebpackPlugin([{
-      from: './src/assets',
+      from: './src/assets/',
       to: 'assets'
     }]),
     new HtmlWebpackPlugin({

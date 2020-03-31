@@ -12,7 +12,7 @@ module.exports = {
       path.resolve(__dirname, '../'),
       argv.appName || 'dist'
     ),
-    filename: 'js/[name].[contenthash:8].js'
+    filename: 'js/[name].[hash:8].js'
   },
   plugins: [],
   module: {
