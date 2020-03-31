@@ -1,6 +1,5 @@
 const path = require('path')
 const baseConfig = require('./webpack.base.js')
-const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -76,9 +75,9 @@ module.exports = merge(baseConfig, {
     }]),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: path.resolve(__dirname, '../src/index.ejs'),
+      template: path.resolve(__dirname, '../src/prod.ejs'),
       inject: false
     }),
-    new BundleAnalyzerPlugin()
+    process.env.NODE_ENV === 'analysis' ? new BundleAnalyzerPlugin() : () => {}
   ]
 })

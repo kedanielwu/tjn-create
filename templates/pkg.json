@@ -41,12 +41,23 @@
     "less-loader": "^5.0.0",
     "sass-loader": "^8.0.2",
     "node-sass": "^4.13.1",
-    "less": "^3.11.1"
+    "less": "^3.11.1",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "sinon": "^9.0.1",
+    "babel-jest": "^25.2.4"
   },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not ie < 11",
     "not op_mini all"
-  ]
+  ],
+  "jest": {
+    "setupFilesAfterEnv": ["<rootDir>src/setupTests.js"],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less|sass)$": "<rootDir>/__mocks__/styleMock.js"
+    }
+  }
 }
