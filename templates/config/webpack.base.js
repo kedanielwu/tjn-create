@@ -12,7 +12,7 @@ module.exports = {
       path.resolve(__dirname, '../'),
       argv.appName || 'dist'
     ),
-    filename: 'index.js'
+    filename: 'js/[name].[contenthash:8].js'
   },
   plugins: [],
   module: {
@@ -47,7 +47,7 @@ module.exports = {
             "@babel/preset-react"
           ],
           plugins: [
-            "@babel/plugin-proposal-class-properties"
+            "@babel/plugin-proposal-class-properties",
           ]
         },
         exclude: /node_modules/
