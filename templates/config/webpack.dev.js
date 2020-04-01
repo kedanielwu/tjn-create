@@ -11,7 +11,27 @@ module.exports = merge(baseConfig, {
   module: {
     rules: [
       {
-        test: /\.(le|c)ss/,
+        test: /\.css/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: [
+                require('autoprefixer')
+              ]
+            }
+          },
+        ]
+      },
+      {
+        test: /\.less/,
         use: [
           'style-loader',
           {

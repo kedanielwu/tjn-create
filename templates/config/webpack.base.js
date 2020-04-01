@@ -12,7 +12,9 @@ module.exports = {
       path.resolve(__dirname, '../'),
       argv.appName || 'dist'
     ),
-    filename: 'js/[name].[hash:8].js'
+    filename: 'js/[name].[hash:8].js',
+    chunkFilename: 'js/[name].[hash:8].js',
+    publicPath: '/' // NOTE: THIS NEED TO BE CHANGED TO YOUR TRIRIGA ENV
   },
   plugins: [],
   module: {

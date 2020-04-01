@@ -10,7 +10,11 @@ const { spawnSync } = require('child_process');
 // get base template path
 const TEMPLATE_PATH = path.join(__dirname, 'templates');
 // get first argv as name
-const APP_NAME = process.argv[2] || 'tjn-app';
+const APP_NAME = process.argv[2];
+if (!APP_NAME) {
+  console.error('No App Name Entered!');
+  process.exit(1);
+}
 // get current working dir
 const CURRENT_PATH = process.cwd();
 // set App Path

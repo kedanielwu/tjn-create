@@ -33,7 +33,7 @@
 <% for (var chunk in htmlWebpackPlugin.files.css) { %>
 <link rel="stylesheet" href="<%= htmlWebpackPlugin.files.css[chunk] %>">
 <% } %>
-<% for (var chunk in htmlWebpackPlugin.files.js) { %>
-<script src="<%= htmlWebpackPlugin.files.js[chunk] %>"></script>
+<% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+<script src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
 <% } %>
 </html>
