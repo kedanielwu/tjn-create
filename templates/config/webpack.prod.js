@@ -5,6 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const argv = require('yargs').argv;
 const merge = require('webpack-merge');
 module.exports = merge(baseConfig, {
   mode: 'production',
@@ -94,7 +95,7 @@ module.exports = merge(baseConfig, {
       to: 'assets'
     }]),
     new HtmlWebpackPlugin({
-      filename: 'index.html',
+      filename: `${argv.appName}.html`,
       template: path.resolve(__dirname, '../src/prod.ejs'),
       inject: false
     }),
