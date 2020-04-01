@@ -1,6 +1,6 @@
 {
   "name": "tjn-create",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React Application Scaffold for Tjene Custom Development",
   "main": "cli.js",
   "bin": {
