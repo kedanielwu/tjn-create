@@ -1,5 +1,6 @@
-const path = require('path')
-const baseConfig = require('./webpack.base.js')
+const path = require('path');
+const baseConfig = require('./webpack.base.js');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -77,12 +78,13 @@ module.exports = merge(baseConfig, {
   },
   optimization: {
     moduleIds: 'hashed',
-    runtimeChunk: true,
+    runtimeChunk: 'single',
     splitChunks: {
       chunks: 'all'
     }
   },
   plugins: [
+    new webpack.HashedModuleIdsPlugin(),
     new CleanWebpackPlugin({
       verbose: true,
     }),
