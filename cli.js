@@ -12,7 +12,7 @@ const TEMPLATE_PATH = path.join(__dirname, 'templates');
 // get first argv as name
 const APP_NAME = process.argv[2];
 if (!APP_NAME) {
-  console.error('No App Name Entered!');
+  console.log(chalk.red('ERR!') + '  App Name Missing.');
   process.exit(1);
 }
 // get current working dir
@@ -67,7 +67,7 @@ const proc = spawnSync(
   }
 );
 if (proc.status !== 0) {
-  console.error('npm install failed');
+  console.log(chalk.red('ERR!') + '  npm install failed');
   process.exit(1);
 }
 
