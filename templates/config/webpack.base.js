@@ -14,7 +14,7 @@ module.exports = {
     ),
     filename: 'js/[name].[hash:8].js',
     chunkFilename: 'js/[name].[hash:8].js',
-    publicPath: '/' // NOTE: THIS NEED TO BE CHANGED TO YOUR TRIRIGA ENV
+    publicPath: process.env.NODE_ENV === 'production' ? `/p/components/tri_view_components/${argv.appName}/` : '/' 
   },
   plugins: [],
   module: {
@@ -47,6 +47,7 @@ module.exports = {
           {
             loader: "url-loader",
             options: {
+              esModule: false,
               fallback: 'file-loader',
               limit: 1024000
             }
@@ -59,7 +60,8 @@ module.exports = {
           {
             loader: "file-loader",
             options: {
-              name: "[name].[ext]"
+              name: "[name].[ext]",
+              esModule: false
             }
           }
         ]

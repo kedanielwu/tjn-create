@@ -30,8 +30,8 @@ fs.copySync(TEMPLATE_PATH, APP_PATH);
 const packageJson = require(path.join(APP_PATH, 'pkg.json'));
 packageJson.name = APP_NAME;
 packageJson.scripts = {
-  'bundle': `webpack -p --progress --config ./config/webpack.prod.js --appName=${APP_NAME}`,
-  'start': `webpack-dev-server --config ./config/webpack.dev.js --appName=${APP_NAME}`,
+  'bundle': `cross-env NODE_ENV=production webpack -p --progress --config ./config/webpack.prod.js --appName=${APP_NAME}`,
+  'start': `cross-env NODE_ENV=development webpack-dev-server -d --config ./config/webpack.dev.js --appName=${APP_NAME}`,
   'analysis': `cross-env NODE_ENV=analysis webpack -p --progress --config ./config/webpack.prod.js --appName=${APP_NAME}`,
   'test': 'jest'
 };
