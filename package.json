@@ -1,6 +1,6 @@
 {
   "name": "tjn-create",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React Application Scaffold for Tjene Custom Development",
   "main": "cli.js",
   "bin": {
@@ -17,7 +17,7 @@
     "React"
   ],
   "author": "Ke Daniel Wu",
-  "license": "MIT",
+  "license": "(MIT, OFL-1.1, Apache 2.0)",
   "bugs": {
     "url": "https://github.com/kedanielwu/tjn-create/issues"
   },
